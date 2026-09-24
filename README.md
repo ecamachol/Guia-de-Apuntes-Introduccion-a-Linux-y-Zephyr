@@ -9,8 +9,6 @@ Este repositorio contiene los apuntes, comandos básicos y la estructura de trab
 2. [Entornos Virtuales en Python (`venv`)](#2-entornos-virtuales-en-python-venv)
 3. [Estructura Estándar de un Proyecto en Zephyr](#3-estructura-estándar-de-un-proyecto-en-zephyr)
 4. [Flujo de Trabajo y Compilación con `west`](#4-flujo-de-trabajo-y-compilación-con-west)
-5. [Resolución de Errores Comunes](#5-resolución-de-errores-comunes)
-
 ---
 
 ## 1. Navegación y Comandos Básicos de Linux
