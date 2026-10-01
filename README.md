@@ -83,7 +83,7 @@ cd ..
 ### Compilar el proyecto especificando la tarjeta destino:
 
 ```bash
-west build -b beagleconnect_freedom
+west build -b beagleconnect_freedom@C7/cc1352p7 -p always
 ```
 
 ### Ajustes de configuración del Kernel (Opcional):
