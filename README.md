@@ -103,14 +103,26 @@ cd ..
 
 ### Compilar el proyecto especificando la tarjeta destino:
 
+El comando `west build` compila la aplicación indicando la versión exacta del hardware mediante `-b`. La bandera `-p always` (pristine) realiza una compilación limpia, eliminando la caché de construcciones anteriores para prevenir errores de compilación residuales.
+
 ```bash
 west build -b beagleconnect_freedom@C7/cc1352p7 -p always
 ```
 
-### Ajustes de configuración del Kernel (Opcional):
+### Asignar Permisos al Puerto Serial:
+
+En Linux, los dispositivos USB/Serial asignados en la ruta `/dev/ttyACM0` requieren permisos de lectura y escritura para que el usuario pueda programarlos o comunicarse con ellos.
 
 ```bash
-west build -t guiconfig
+sudo chmod 666 /dev/ttyACM0
+```
+
+### Subir el código a la placa (Flashear):
+
+Transfiere el archivo binario generado durante la compilación a la memoria flash del microcontrolador conectado.
+
+```bash
+west flash
 ```
 
 ---
