@@ -71,9 +71,30 @@ cd Codigo_Prueba_1
 
 ### Crear la estructura del proyecto:
 
+En Zephyr RTOS, el sistema de compilación se basa en la combinación de **CMake** (para la gestión y construcción del proyecto) y **Kconfig** (para la configuración modular del sistema operativo). Para que el entorno reconozca y compile correctamente una aplicación, es obligatorio contar con la siguiente estructura: 
+
+A continuación se detalla la creación de cada archivo esencial y su función dentro del proyecto:
+
+#### Creaciòn archivo CMakelists.txt:
+
+El archivo `CMakeLists.txt` es la guía principal de compilación. Le indica a CMake la versión mínima requerida, vincula las librerías y macros del núcleo de Zephyr, define el nombre formal del proyecto y especifica qué archivos de código fuente deben procesarse para generar el ejecutable.
+
 ```bash
 nano CMakeLists.txt
+```
+
+#### Creaciòn archivo prj.conf:
+
+El archivo `prj.conf` utiliza el sistema Kconfig para personalizar el kernel de Zephyr. A través de este archivo se pueden activar o desactivar controladores de hardware (GPIO, I2C, SPI, UART), habilitar pilas de red/Bluetooth, ajustar tamaños de pila (stack) de los hilos de ejecución o activar opciones de depuración, todo sin necesidad de modificar el código en C.
+
+```bash
 nano prj.conf
+```
+#### Creaciòn carpeta src y archivo main.c:
+
+Por estándar en desarrollo con Zephyr y lenguaje C, todo el código fuente de la aplicación debe organizarse dentro del directorio `src`. El archivo `main.c` contiene la función `main()`, la cual representa el punto de entrada del programa una vez que el RTOS ha finalizado su secuencia de arranque e inicialización de periféricos.
+
+```bash
 mkdir src
 cd src
 nano main.c
